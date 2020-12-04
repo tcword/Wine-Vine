@@ -1,0 +1,678 @@
+/* Bebas Neue Fonts */
+@import url("./fonts/fonts.css");
+
+/*Base styles*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-font-size: 1.6rem;
+  --body-font-color: #5f5f5f;
+  --body-font-family: "Open Sans", sans-serif;
+  --heading-font-family: "Playfair Display", sans-serif;
+  --light-color: #f4f4f4;
+  --dark-color: #262626;
+  --light-gray-color: #f2f3f7;
+  --orange-color: #ec5453;
+  --blue-color: #2c98f0;
+  --yellow-color: #f9bf3f;
+  --purple-color: #a84cb8;
+  --dark-blue-color: #4054b2;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Arimo";
+  color: var(--body-font-color);
+  font-size: var(--body-font-size);
+  background-color: #f4f4f4;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+/* Navigation */
+
+.hamburger-menu {
+  display: none;
+}
+
+.nav {
+  width: 24rem;
+  height: 100vh;
+  background-color: #1d1d1d;
+  color: whitesmoke;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.intro {
+  font-family: "Bebas Neue Light";
+  text-align: center;
+  margin: 5rem 0;
+  line-height: 1.2;
+}
+
+.intro-heading {
+  font-size: 4.3rem;
+  letter-spacing: 1px;
+}
+
+.intro-subhead {
+  font-family: "Bebas Neue Light";
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 6px;
+}
+
+.nav-list {
+  list-style: none;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.nav-item:hover::before {
+  transform: scaleX(1);
+}
+
+.nav-item:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav-link {
+  font-family: "Bebas Neue Book";
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: whitesmoke;
+  padding: 1rem 1.75rem;
+}
+
+.social-media-wrapper {
+  margin-top: auto;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.social-media-wrapper span {
+  display: block;
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+}
+
+.sm-link {
+  margin: 0 1.2rem;
+  font-size: 2.2rem;
+  color: whitesmoke;
+  /* border: 1px solid whitesmoke; */
+  transition: color 0.5s, transform 0.5s;
+}
+
+.sm-link:hover {
+  color: #999;
+  /* transform: translateY(-3px) */
+}
+
+.copyright-notice {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Intro Banner Page */
+
+.main {
+  width: calc(100% - 24rem);
+  transform: translateX(24rem);
+}
+
+/* section:not(.hero) {
+  padding: 5rem 0;
+} */
+
+.hero {
+  height: 100vh;
+  background: url("https://static.vecteezy.com/system/resources/thumbnails/000/833/489/original/black-abstract-background-with-diamond-shape-layers.jpg")
+    center/cover;
+  position: relative;
+  display: flex;
+}
+
+.banner-title {
+  position: absolute;
+  margin: 15% 6%;
+  line-height: 0.86;
+}
+
+.banner-title .thin-text {
+  font-family: "Bebas Neue Light";
+  font-size: 9vw;
+  font-weight: 400;
+  color: white;
+}
+
+.name-heading {
+  text-align: left;
+  font-size: 10vw;
+  font-family: "Bebas Neue Book";
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: white;
+  z-index: 1;
+  user-select: none;
+}
+
+.sub-heading {
+  font-family: "Bebas Neue Light";
+  font-size: 2.3vw;
+  font-weight: 400;
+  letter-spacing: 4px;
+  color: white;
+}
+
+.banner-title .btn {
+  background-color: rgba(255, 255, 255, 0.75);
+  outline: none;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  margin-top: 2rem;
+}
+
+.banner-title .btn:hover {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.banner-title .btn span {
+  font-family: "Bebas Neue Book";
+  letter-spacing: 6px;
+  font-weight: 600;
+  font-size: 1.2vw;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+}
+
+.mouse {
+  height: 5rem;
+  width: 2.5rem;
+  border: 2px solid whitesmoke;
+  border-radius: 2rem;
+  display: flex;
+}
+
+.mouse span {
+  display: block;
+  height: 1rem;
+  width: 1rem;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  margin: auto;
+  animation: move-wheel 1s linear infinite;
+}
+
+.arrow span {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  border-right: 2px solid whitesmoke;
+  border-bottom: 2px solid whitesmoke;
+  transform: rotate(45deg);
+  animation: arrow-down 1s linear infinite;
+}
+
+@keyframes move-wheel {
+  0% {
+    opacity: 1;
+    transform: translateY(-1rem);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+}
+
+@keyframes arrow-down {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Recent Articles Section */
+
+.recent-articles-page {
+  height: 100vh;
+}
+
+.gallery-heading {
+  text-align: center;
+  margin: 4rem 0rem;
+}
+
+.gallery-heading h1 {
+  font-family: "Bebas Neue Book";
+  font-size: 8rem;
+  letter-spacing: 2px;
+  color: #1d1d1d;
+}
+
+.gallery-heading p {
+  font-family: "Bebas Neue Book";
+  font-size: 3rem;
+  letter-spacing: 4px;
+  color: #1d1d1d;
+}
+
+.gallery-wrapper {
+  display: flex;
+  height: 70vh;
+}
+
+.gallery-item {
+  margin: 0 0.25rem;
+  display: flex;
+  flex: 1;
+  padding: 2.5rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  transition: flex 0.5s ease-in;
+}
+
+.gallery-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: -1;
+  transition: background-color 0.5s;
+}
+
+.gallery-item:hover:after {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item:hover {
+  flex: 5;
+}
+
+.item-1 {
+  background-image: url("https://i.pinimg.com/originals/74/3f/ec/743fec3addbbadb9bd402bf74e88891c.jpg");
+}
+
+.item-2 {
+  background-image: url("https://www.oodegr.com/english/ag_grafi/eikones/cana.jpg");
+}
+
+.item-3 {
+  background-image: url("https://thenewmystics.com/Images/Content/1000000236/Thumbnail/1000221918.jpg");
+}
+
+.item-4 {
+  background-image: url("https://www.edgarlowen.com/13060c.jpg");
+}
+
+.description-wrapper {
+  text-transform: uppercase;
+  align-self: flex-end;
+  overflow: hidden;
+}
+
+.name {
+  font-family: "Bebas Neue Book";
+  font-size: 3rem;
+  color: black;
+  background-color: #fff;
+  padding: 1rem 2rem;
+  transform: translateY(-100%);
+}
+
+.btn2 {
+  margin-top: 1rem;
+  display: inline-block;
+  background-color: #fff;
+  padding: 1rem 2rem;
+  font-family: "Bebas Neue Book";
+  letter-spacing: 1px;
+  color: black;
+  transform: translateY(100%);
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  margin-top: 2rem;
+  border: none;
+}
+
+.btn2:hover {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.btn2 span {
+  font-family: "Bebas Neue Book";
+  letter-spacing: 6px;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.name,
+.btn2 {
+  transition: transform 0.3s 0.5s;
+}
+
+.gallery-item:hover .name,
+.gallery-item:hover .btn2 {
+  transform: translateY(0);
+}
+
+.gallery-item:not(:hover) .name,
+.gallery-item:not(:hover) .btn2 {
+  transition-delay: 0s;
+}
+
+/* Responsive Media Queries */
+
+@media screen and (max-width: 1030px) {
+  .nav {
+    transform: translateX(-27rem);
+    transition: transform 0.5s;
+  }
+
+  .is-open .nav {
+    transform: translateX(0);
+  }
+
+  .hamburger-menu {
+    display: flex;
+    width: 5rem;
+    height: 5rem;
+    background-color: #1d1d1d;
+    color: whitesmoke;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 2.6rem;
+    cursor: pointer;
+    transition: transform 0.5s;
+    z-index: 2000;
+  }
+
+  .hamburger-menu i {
+    margin: auto;
+  }
+
+  .close {
+    display: none;
+  }
+
+  .is-open .hamburger-menu {
+    transform: translateX(19rem);
+  }
+
+  .is-open .close {
+    display: block;
+  }
+
+  .is-open .open {
+    display: none;
+  }
+
+  .main {
+    width: 100%;
+    transform: initial;
+  }
+
+  .hero {
+    height: 80vh;
+  }
+
+  .hero::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.5s;
+  }
+
+  .is-open .hero::after {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Banner */
+
+  .banner-title {
+    position: absolute;
+    margin: 30% 6%;
+    line-height: 0.86;
+  }
+
+  .banner-title .thin-text {
+    font-family: "Bebas Neue Light";
+    font-size: 15vw;
+    font-weight: 400;
+    color: white;
+  }
+
+  .name-heading {
+    text-align: left;
+    font-size: 15vw;
+    font-family: "Bebas Neue Book";
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: white;
+    z-index: 1;
+    user-select: none;
+  }
+
+  .sub-heading {
+    font-family: "Bebas Neue Light";
+    font-size: 4.6vw;
+    font-weight: 400;
+    letter-spacing: 4px;
+    max-width: 60%;
+    color: white;
+  }
+
+  .banner-title .btn {
+    background-color: rgba(255, 255, 255, 0.75);
+    outline: none;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    margin-top: 2rem;
+  }
+
+  .banner-title .btn:hover {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+  }
+
+  .banner-title .btn span {
+    font-family: "Bebas Neue Book";
+    letter-spacing: 5px;
+    font-weight: 600;
+    font-size: 2.5vw;
+  }
+
+  /* Recent Articles */
+
+  .name {
+    font-size: 5rem;
+  }
+
+  .btn2 span {
+    font-size: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  /* Recent Articles */
+  .gallery-wrapper {
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .gallery-item {
+    margin: 0.1rem 2.5rem;
+  }
+
+  .gallery-item:hover {
+    flex: 100%;
+  }
+
+  .name {
+    font-size: 5rem;
+  }
+
+  .btn2 span {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* Banner */
+  .banner-title {
+    position: absolute;
+    margin: 45% 6%;
+    line-height: 0.86;
+  }
+
+  .banner-title .thin-text {
+    font-family: "Bebas Neue Light";
+    font-size: 18vw;
+    font-weight: 400;
+    color: white;
+  }
+
+  .name-heading {
+    text-align: left;
+    font-size: 18vw;
+    font-family: "Bebas Neue Book";
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: white;
+    z-index: 1;
+    user-select: none;
+  }
+
+  .sub-heading {
+    font-family: "Bebas Neue Light";
+    font-size: 5vw;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: white;
+    max-width: 60%;
+  }
+
+  .banner-title .btn {
+    background-color: rgba(255, 255, 255, 0.75);
+    outline: none;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    margin-top: 1.5rem;
+  }
+
+  .banner-title .btn:hover {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+  }
+
+  .banner-title .btn span {
+    font-family: "Bebas Neue Book";
+    letter-spacing: 3px;
+    font-weight: 600;
+    font-size: 3.5vw;
+  }
+
+  /*Recent Articles  */
+
+  .name {
+    font-size: 2.5rem;
+  }
+
+  .btn2 span {
+    font-size: 1.5rem;
+  }
+}
